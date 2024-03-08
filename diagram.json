@@ -1,0 +1,120 @@
+ 	{
+  "version": 1,
+  "author": "Raluca",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -281.4, "left": 377.2, "attrs": {} },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 125.4, "left": 44.4, "attrs": {} },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix1",
+      "top": -349.84,
+      "left": -131.4,
+      "rotate": 270,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix2",
+      "top": -350.16,
+      "left": -208.6,
+      "rotate": 90,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -211.3,
+      "left": 550.7,
+      "rotate": 90,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -211.1,
+      "left": 505.5,
+      "rotate": 270,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": -211.3,
+      "left": 454.7,
+      "rotate": 90,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": -211.3,
+      "left": 397.1,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix3",
+      "top": -453.51,
+      "left": 116.5,
+      "rotate": 270,
+      "attrs": { "chain": "1" }
+    },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "sevseg1",
+      "top": -307.24,
+      "left": 83.83,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "matrix2:CLK", "mega:13", "cyan", [ "v201.6", "h183" ] ],
+    [ "matrix2:CS", "mega:12", "violet", [ "v192", "h182.4" ] ],
+    [ "matrix2:DIN", "mega:11", "magenta", [ "v182.4", "h182.8" ] ],
+    [ "matrix2:V+.2", "matrix1:V+", "purple", [ "v-19.04", "h28.8" ] ],
+    [ "matrix2:GND.2", "matrix1:GND", "blue", [ "v-28.64", "h38.4" ] ],
+    [ "matrix2:DOUT", "matrix1:DIN", "green", [ "v-38.24", "h38.4" ] ],
+    [ "matrix2:CS.2", "matrix1:CS", "gold", [ "v-47.84", "h57.6" ] ],
+    [ "matrix2:CLK.2", "matrix1:CLK", "red", [ "v-57.44", "h105.6" ] ],
+    [ "bb1:5b.h", "bb1:bn.4", "green", [ "v0" ] ],
+    [ "bb1:11b.h", "bb1:bn.9", "green", [ "v0" ] ],
+    [ "bb1:16b.h", "bb1:bn.13", "green", [ "v0" ] ],
+    [ "bb1:21b.h", "bb1:bn.17", "green", [ "v0" ] ],
+    [ "bb1:bp.7", "mega:5V", "red", [ "v459.9", "h-269.5" ] ],
+    [ "bb1:bn.6", "mega:GND.2", "black", [ "v440.3", "h-250.15" ] ],
+    [ "bb1:3b.h", "mega:7", "#8f4814", [ "v144", "h-192" ] ],
+    [ "bb1:9b.h", "mega:6", "blue", [ "v38.4", "h-19.2", "v115.2", "h-192" ] ],
+    [ "bb1:14b.h", "mega:5", "green", [ "v163.2", "h-182.4" ] ],
+    [ "bb1:19b.h", "mega:4", "gold", [ "v172.8", "h-220.8" ] ],
+    [ "matrix2:GND", "bb1:bn.1", "black", [ "v124.8", "h374.4", "v-65.9" ] ],
+    [ "matrix2:V+", "bb1:bp.1", "red", [ "v115.2", "h355.2", "v-66.3" ] ],
+    [ "matrix3:CLK", "mega:10", "red", [ "v-19.2", "h144", "v316.8", "h-134.1" ] ],
+    [ "matrix3:CS", "mega:9", "orange", [ "v-28.8", "h163.2", "v336", "h-133.7" ] ],
+    [ "matrix3:DIN", "mega:8", "gold", [ "v-38.4", "h182.4", "v355.2", "h-133.8" ] ],
+    [ "matrix3:GND", "mega:GND.1", "black", [ "v-48", "h201.6", "v374.4", "h-201.4" ] ],
+    [ "btn1:1.l", "bb1:21t.b", "", [ "$bb" ] ],
+    [ "btn1:2.l", "bb1:19t.b", "", [ "$bb" ] ],
+    [ "btn1:1.r", "bb1:21b.g", "", [ "$bb" ] ],
+    [ "btn1:2.r", "bb1:19b.g", "", [ "$bb" ] ],
+    [ "btn2:1.l", "bb1:14b.g", "", [ "$bb" ] ],
+    [ "btn2:2.l", "bb1:16b.g", "", [ "$bb" ] ],
+    [ "btn2:1.r", "bb1:14t.b", "", [ "$bb" ] ],
+    [ "btn2:2.r", "bb1:16t.b", "", [ "$bb" ] ],
+    [ "btn3:1.l", "bb1:11t.b", "", [ "$bb" ] ],
+    [ "btn3:2.l", "bb1:9t.b", "", [ "$bb" ] ],
+    [ "btn3:1.r", "bb1:11b.g", "", [ "$bb" ] ],
+    [ "btn3:2.r", "bb1:9b.g", "", [ "$bb" ] ],
+    [ "btn4:1.l", "bb1:5t.b", "", [ "$bb" ] ],
+    [ "btn4:2.l", "bb1:3t.b", "", [ "$bb" ] ],
+    [ "btn4:1.r", "bb1:5b.g", "", [ "$bb" ] ],
+    [ "btn4:2.r", "bb1:3b.g", "", [ "$bb" ] ],
+    [ "sevseg1:CLK", "mega:20", "limegreen", [ "h57.6", "v326.4", "h48" ] ],
+    [ "sevseg1:DIO", "mega:19", "cyan", [ "h48", "v326.4", "h48", "v0", "h7.7" ] ],
+    [ "matrix3:V+.2", "sevseg1:VCC", "red", [ "v25.01", "h124.8", "v76.8" ] ],
+    [ "matrix3:GND.2", "sevseg1:GND", "black", [ "v15.41", "h124.8", "v96" ] ],
+    [ "matrix3:V+", "mega:5V", "green", [ "v-57.6", "h604.8", "v336", "h0", "v528", "h-528" ] ]
+  ],
+  "dependencies": {}
+}
